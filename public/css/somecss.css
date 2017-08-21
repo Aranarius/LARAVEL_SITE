@@ -1,0 +1,73 @@
+body {
+    font-family: Comfortaa;
+    background-color: whitesmoke;
+}
+.container {
+
+}
+#regg{
+    text-align: center;
+
+}
+h1 {
+    font-size: 200%;
+    -webkit-filter: drop-shadow(0 1px 10px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0 3px 4px rgba(0,0,0,.5));
+    /*-ms-filter: drop-shadow(0 3px 4px rgba(0,0,0,.5));*/
+    -vo-filter: drop-shadow(0 3px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,.5));
+    margin-bottom: 20px;
+}
+
+
+
+#marg
+{
+    margin-top: 80px;
+}
+.checkbox {
+    font-size: 130%;
+    -webkit-filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+    /*-ms-filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));*/
+    -vo-filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+
+}
+button
+{
+    -webkit-filter: drop-shadow(0 1px 10px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0 3px 4px rgba(0,0,0,.5));
+    /*-ms-filter: drop-shadow(0 3px 4px rgba(0,0,0,.5));*/
+    -vo-filter: drop-shadow(0 3px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,.5));
+    margin-bottom: -10px;
+}
+#wer
+{
+    margin: 20px;
+}
+#wer2
+{
+    margin: 40px;
+}
+
+#korobok
+{
+margin-top: 100px;
+    margin-bottom: 20px;
+    height: 15px;
+    /*background-color: #F0F8FF;*/
+
+
+}
+#picture1
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    height:300px;
+
+
+}
+
