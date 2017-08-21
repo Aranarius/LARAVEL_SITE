@@ -1,0 +1,208 @@
+-- Adminer 4.3.1 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+CREATE DATABASE `LaravelFirstSite` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `LaravelFirstSite`;
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `codes`;
+CREATE TABLE `codes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` tinyint(3) unsigned NOT NULL,
+  `code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE `customers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `customers_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `customers` (`id`, `name`, `email`, `contact_number`, `created_at`, `updated_at`) VALUES
+(1,	'Barry Lind',	'ywalker@hotmail.com',	'+1-576-743-8803',	NULL,	NULL),
+(2,	'Trent Wiegand I',	'charity.harris@herzog.com',	'946-912-4938 x496',	NULL,	NULL),
+(3,	'Mr. Nicklaus Rice Sr.',	'rmosciski@gmail.com',	'(512) 933-7016',	NULL,	NULL),
+(4,	'Ryan Wiza',	'marlee.labadie@yahoo.com',	'(435) 940-0222',	NULL,	NULL),
+(5,	'Edythe Friesen',	'kali62@torphy.com',	'253-954-1500',	NULL,	NULL),
+(6,	'Jonas Schulist V',	'evangeline.kihn@douglas.com',	'1-691-925-0927',	NULL,	NULL),
+(7,	'Prof. Casimir Lang Sr.',	'ritchie.coleman@gmail.com',	'(316) 478-8249 x184',	NULL,	NULL),
+(8,	'Prof. Cheyanne Lueilwitz',	'chauncey63@huels.org',	'+1-685-354-3869',	NULL,	NULL),
+(9,	'Ms. Lisa Abshire DDS',	'noah.connelly@yahoo.com',	'384-433-4875 x876',	NULL,	NULL),
+(10,	'Herminio Volkman',	'quitzon.rosina@hessel.com',	'891.948.9080',	NULL,	NULL),
+(11,	'Floyd Hilll',	'gerlach.bruce@maggio.com',	'+1-725-999-1178',	NULL,	NULL),
+(12,	'Felipa Hilpert III',	'lindgren.fanny@emmerich.com',	'(325) 409-3321 x9434',	NULL,	NULL),
+(13,	'Hosea Kling III',	'timothy35@klocko.com',	'604.921.9227',	NULL,	NULL),
+(14,	'Gianni Feeney',	'gabe.lockman@gmail.com',	'1-216-869-6292 x69786',	NULL,	NULL),
+(15,	'Ms. Sabrina McCullough',	'weston.schoen@bashirian.com',	'1-608-342-7953 x84770',	NULL,	NULL),
+(16,	'Kathryne Cummerata',	'marietta78@gmail.com',	'(320) 665-6691',	NULL,	NULL),
+(17,	'Gino Kuhn',	'pmitchell@gmail.com',	'(825) 866-2199',	NULL,	NULL),
+(18,	'Winfield Schimmel',	'louvenia.anderson@gmail.com',	'564.514.9406',	NULL,	NULL),
+(19,	'Marshall Dach',	'eli.farrell@gmail.com',	'804.220.1450 x01814',	NULL,	NULL),
+(20,	'Dr. Maximilian Marvin',	'tessie.hickle@gmail.com',	'+1 (924) 552-3595',	NULL,	NULL),
+(21,	'Prof. Keon Rosenbaum',	'omorissette@schaefer.org',	'928.439.1288',	NULL,	NULL),
+(22,	'Guiseppe Heaney',	'jana25@legros.com',	'1-290-475-1199',	NULL,	NULL),
+(23,	'Prof. Theron Haley Jr.',	'maritza31@hickle.com',	'1-212-541-7343 x738',	NULL,	NULL),
+(24,	'Ms. Kaitlin Leuschke',	'marcelo86@johnston.com',	'1-321-216-3251 x319',	NULL,	NULL),
+(25,	'Jaylen Dickinson II',	'rosie75@gmail.com',	'814-620-1471 x57944',	NULL,	NULL),
+(26,	'Prof. Caitlyn Johns',	'mkris@kozey.biz',	'+1-993-842-9356',	NULL,	NULL),
+(27,	'Rosina Jerde',	'cary94@hotmail.com',	'1-387-783-4073 x717',	NULL,	NULL),
+(28,	'Grayson Hartmann',	'qturcotte@shanahan.info',	'(917) 295-4877 x948',	NULL,	NULL),
+(29,	'Prof. Adrain Hessel DDS',	'rrath@rowe.net',	'+17599439772',	NULL,	NULL),
+(30,	'Grace Graham',	'wnitzsche@hotmail.com',	'1-771-958-7149',	NULL,	NULL),
+(31,	'Miss Maymie Collins',	'esmeralda.altenwerth@gmail.com',	'641.904.3620',	NULL,	NULL),
+(32,	'Benjamin Dibbert',	'zieme.furman@boyer.com',	'+1-830-992-3366',	NULL,	NULL),
+(33,	'Astrid Swift',	'gerry.wilkinson@hotmail.com',	'220-760-7757',	NULL,	NULL),
+(34,	'Eileen Lehner',	'eaufderhar@beatty.com',	'+1-905-757-4530',	NULL,	NULL),
+(35,	'Emerald Johns',	'gutkowski.hanna@hoppe.net',	'1-895-508-6194',	NULL,	NULL),
+(36,	'Deron Maggio',	'jeffery.barrows@wisoky.com',	'(462) 231-8410 x21593',	NULL,	NULL),
+(37,	'Maia Bailey',	'verdie.rodriguez@gmail.com',	'904-974-7940',	NULL,	NULL),
+(38,	'Camron Bernier',	'xdamore@klocko.org',	'(226) 574-3715 x641',	NULL,	NULL),
+(39,	'Jody Renner',	'katelyn.will@gmail.com',	'1-807-383-0552 x31734',	NULL,	NULL),
+(40,	'Prof. Eloy Kreiger',	'maverick.kub@yahoo.com',	'746.965.0827 x886',	NULL,	NULL),
+(41,	'Alejandra Fadel',	'mskiles@ruecker.com',	'+15785738674',	NULL,	NULL),
+(42,	'Ivy Feil',	'pwhite@graham.com',	'(583) 308-2896',	NULL,	NULL),
+(43,	'Judd Prohaska',	'ludwig83@waelchi.info',	'+1-953-395-7139',	NULL,	NULL),
+(44,	'Prof. Santiago Skiles PhD',	'erdman.marques@yahoo.com',	'865-248-6047 x327',	NULL,	NULL),
+(45,	'Kirk Berge',	'lexi29@luettgen.com',	'(592) 344-6844',	NULL,	NULL),
+(46,	'Kaitlyn Hoppe',	'ekovacek@pouros.com',	'1-363-377-6535',	NULL,	NULL),
+(47,	'Tiara Kunze',	'omcclure@hotmail.com',	'914.871.8696',	NULL,	NULL),
+(48,	'Angelita Volkman',	'brandi14@bernhard.com',	'+1 (581) 577-9630',	NULL,	NULL),
+(49,	'Eleanore Zieme',	'pfeffer.vida@hotmail.com',	'401-867-8086',	NULL,	NULL),
+(50,	'Raphaelle Weber',	'otha.schumm@hotmail.com',	'+1 (980) 514-0727',	NULL,	NULL),
+(51,	'Philip Goldner',	'ereichert@hotmail.com',	'+1 (424) 943-8918',	NULL,	NULL),
+(52,	'Dorothy Hansen',	'wisozk.kip@nitzsche.info',	'1-264-820-1938',	NULL,	NULL),
+(53,	'Dr. Alysa Cummerata Jr.',	'francisco24@hotmail.com',	'238.390.0667 x8008',	NULL,	NULL),
+(54,	'Chyna Cormier',	'isaiah.orn@gmail.com',	'1-473-932-2345 x9504',	NULL,	NULL),
+(55,	'Prof. Delpha Moore',	'kuvalis.kaylah@waters.com',	'1-395-375-2562 x4184',	NULL,	NULL),
+(56,	'Bernice Schroeder',	'dianna.cormier@tremblay.info',	'+1 (353) 479-5146',	NULL,	NULL),
+(57,	'Quinn Dibbert I',	'ewald.wunsch@bruen.info',	'(670) 517-8157 x77752',	NULL,	NULL),
+(58,	'Grady Vandervort',	'oconnell.elian@gmail.com',	'(502) 874-3353 x070',	NULL,	NULL),
+(59,	'Domingo Luettgen',	'stokes.lisette@greenfelder.com',	'427.952.1575',	NULL,	NULL),
+(60,	'Alene Rohan',	'wdooley@gmail.com',	'(528) 761-2977 x29248',	NULL,	NULL),
+(61,	'Emerald Renner',	'taylor52@ratke.com',	'586.255.5147 x53238',	NULL,	NULL),
+(62,	'Rene Champlin',	'hkuhlman@yahoo.com',	'(343) 718-7681',	NULL,	NULL),
+(63,	'Iliana Reichert',	'mckenzie.leonard@heller.com',	'840-767-0397',	NULL,	NULL),
+(64,	'Ms. Icie Maggio',	'dashawn82@rogahn.biz',	'(582) 924-8947 x004',	NULL,	NULL),
+(65,	'Elmer Smith',	'mosciski.bennie@gmail.com',	'545.659.1904',	NULL,	NULL),
+(66,	'Lillie Medhurst',	'jonathon.bayer@yahoo.com',	'+1-486-571-0308',	NULL,	NULL),
+(67,	'Weldon Lynch',	'dkoepp@fisher.net',	'372.708.6140',	NULL,	NULL),
+(68,	'Maxwell Hessel',	'ryan59@hyatt.com',	'1-396-472-5866',	NULL,	NULL),
+(69,	'Sheila McCullough',	'raven93@okuneva.net',	'+1-669-227-3036',	NULL,	NULL),
+(70,	'Gia Sanford',	'cleo.purdy@yahoo.com',	'1-852-720-7520',	NULL,	NULL),
+(71,	'Dr. Berneice Padberg Jr.',	'tressie.schumm@heaney.org',	'336.451.3486 x24879',	NULL,	NULL),
+(72,	'Korbin Bashirian',	'kaylin04@hotmail.com',	'(908) 644-9547 x27624',	NULL,	NULL),
+(73,	'Dr. Easton Keebler Jr.',	'jewell97@konopelski.org',	'+1-347-906-0831',	NULL,	NULL),
+(74,	'Amy Gleichner',	'clair87@collier.org',	'645-386-5470 x11330',	NULL,	NULL),
+(75,	'Bella Lang',	'murazik.ralph@quitzon.com',	'(776) 591-9168 x2227',	NULL,	NULL),
+(76,	'Tania Eichmann',	'kiara.turner@stroman.biz',	'316-610-1624 x07116',	NULL,	NULL),
+(77,	'Josefina Smitham PhD',	'mosciski.abdul@hotmail.com',	'837.664.2960 x706',	NULL,	NULL),
+(78,	'Otho O\'Hara',	'grimes.flossie@gmail.com',	'(832) 973-8741 x105',	NULL,	NULL),
+(79,	'Dr. Jarod Zieme Sr.',	'yweber@rolfson.net',	'1-931-921-1469 x522',	NULL,	NULL),
+(80,	'Florida Tillman DDS',	'farrell.betty@hotmail.com',	'+1.797.512.8704',	NULL,	NULL),
+(81,	'Sabryna Denesik',	'nbogisich@gmail.com',	'964-262-8238 x27746',	NULL,	NULL),
+(82,	'Jarred Gerhold',	'hmoen@hotmail.com',	'749.695.0656 x7414',	NULL,	NULL),
+(83,	'Ms. Cristal Hessel',	'karen.doyle@heller.biz',	'379.787.5284',	NULL,	NULL),
+(84,	'Brant Abshire MD',	'ebert.xzavier@daniel.info',	'+15579776987',	NULL,	NULL),
+(85,	'Zelda Weber',	'ken.strosin@armstrong.com',	'+1-459-404-9565',	NULL,	NULL),
+(86,	'Dr. Sophia Adams I',	'hbruen@gmail.com',	'(206) 906-5985',	NULL,	NULL),
+(87,	'Ewald Kunze',	'swaniawski.lew@torp.com',	'+1.907.265.0792',	NULL,	NULL),
+(88,	'Prof. Abe Hauck',	'olson.ella@yahoo.com',	'484-586-6240 x6262',	NULL,	NULL),
+(89,	'Fritz Hyatt',	'kbauch@wehner.com',	'(579) 760-4487',	NULL,	NULL),
+(90,	'Florian Zboncak',	'manuel29@von.com',	'+1-558-834-0902',	NULL,	NULL),
+(91,	'Elza Kunde',	'gwen.wilderman@gutmann.com',	'236-229-2551 x16997',	NULL,	NULL),
+(92,	'Mrs. Fleta Kutch Sr.',	'hoppe.erika@yahoo.com',	'1-557-670-4614 x2763',	NULL,	NULL),
+(93,	'Kenyatta Conn',	'lola.waters@bradtke.com',	'1-734-879-5127',	NULL,	NULL),
+(94,	'Prof. Justus Kovacek MD',	'sboehm@batz.com',	'(227) 685-8672',	NULL,	NULL),
+(95,	'Prof. Nia Hoppe',	'wilkinson.maia@yahoo.com',	'(581) 903-9399',	NULL,	NULL),
+(96,	'Guiseppe Mills',	'heather76@gmail.com',	'1-860-388-3717',	NULL,	NULL),
+(97,	'Mariam Rowe II',	'kian.feil@gmail.com',	'783-209-5488 x353',	NULL,	NULL),
+(98,	'Lacey Schowalter Sr.',	'weber.eula@yahoo.com',	'390.503.9634',	NULL,	NULL),
+(99,	'Milford Wolf',	'winifred53@bogisich.org',	'1-457-571-5833 x1130',	NULL,	NULL),
+(100,	'Jeffery Rippin IV',	'xjerde@yahoo.com',	'(865) 524-8090',	NULL,	NULL);
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(57,	'2014_10_12_000000_create_users_table',	1),
+(58,	'2014_10_12_100000_create_password_resets_table',	1),
+(59,	'2017_07_31_183047_create_userbd_table',	1),
+(60,	'2017_07_31_184002_create_ourusers_table',	2),
+(61,	'2017_08_11_112733_create_products_table',	2),
+(62,	'2017_08_12_104049_customers',	2),
+(63,	'2017_08_12_120010_create_codes_table',	2);
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ProductClass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ProductName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `WhereCreated` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `HowManyHave` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `About` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AreWeHave` tinyint(1) NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `tasks`;
+CREATE TABLE `tasks` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activated` tinyint(1) NOT NULL DEFAULT '0',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `activated`, `remember_token`, `created_at`, `updated_at`) VALUES
+(2,	'DINIS!',	'www@gmail.com',	'$2y$10$7n.jnTEf6aeTK11Us1cTOOwDeJqSHrh7cQzlD7MwNYQ3pJrWx83L2',	0,	'Zo0MvgwHIJMS0gKzIDc2q61ZPwafAiZuaNqq0jqBLjIUebWaaQA9502vjFe8',	'2017-08-18 15:02:31',	'2017-08-18 15:02:31'),
+(3,	'qwen',	'qqq@mail.ru',	'$2y$10$jQ7Vjru7UKwxIyWhTOfyauOsz7dVTKmG4KwbJbMGwqXrQyR4/NeHu',	0,	'IBF8LSkueDA942jfKkZpPtu7oioU52ERgp5Z5ddzs8uJNUazkADoRvBoQU3G',	'2017-08-18 16:24:54',	'2017-08-18 16:24:54');
+
+-- 2017-08-21 09:55:01
